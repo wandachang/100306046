@@ -205,8 +205,10 @@
 				if(num == 1){
 					inputText=prompt("Enter the name of your new friend list", " ");
 					if(inputText=!null){
-						getFr(res);
-
+						FB.api('me/friendlists', 'post', {name: inputText}, function(res){
+							
+							$("<div onclick='changeInfo("+res+");'><img src='https://graph.facebook.com/"+ res + "/picture' /><span>"+inputText+"</span></div>").appendTo("#FriendList");
+						};
 					}
 				}
 
