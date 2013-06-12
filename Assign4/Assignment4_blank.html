@@ -202,10 +202,10 @@
 
 			function change(num){
 
-				if(num==1){}
-					var temptitle = prompt("Enter the name of your new friend list");
+				if(num==1){
+					var temptitle = prompt("Enter the name of your new friend list","");
 							
-					if(temptitle){			
+					if(temptitle!=null){			
 						FB.api('me/friendlists', 'post', {name: temptitle}, function(res){
 							var fId = response['data'][i]['id'];
 							var fName = response['data'][i]['name'];
