@@ -200,13 +200,17 @@
 				
 			}
 
-			function change(1){
-				var temptitle = prompt("Enter the name of your new friend list");
-						
-				if(temptitle){
-								
-					FB.api('me/friendlists', 'post', {name: temptitle}, function(res){
-										
+			function change(num){
+
+				if(num==1){}
+					var temptitle = prompt("Enter the name of your new friend list");
+							
+					if(temptitle){			
+						FB.api('me/friendlists', 'post', {name: temptitle}, function(res){
+							var fId = response['data'][i]['id'];
+							var fName = response['data'][i]['name'];
+							$("<div onclick='changeInfo("+fId+");'><img src='https://graph.facebook.com/"+ fId + "/picture' /><span>"+fName+"</span></div>").appendTo("#FriendList");
+					}
 				}
 			};
 
