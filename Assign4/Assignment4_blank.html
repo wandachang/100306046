@@ -203,8 +203,11 @@
 
 			function change(num){
 				if(num == 1){
-				inputText=prompt("請輸入你的名字 ", " ");
-				document.write("Hello, <font size=+2> <b>" + inputText　+ " </b> </font>, welcome! ");
+					inputText=prompt("Enter the name of your new friend list", " ");
+					if(inputText=!null){
+						getFr(res);
+
+					}
 				}
 
 			}
