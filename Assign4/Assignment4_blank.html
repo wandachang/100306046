@@ -95,34 +95,24 @@
 				
 				//from now on we can decorate our website with the data related to the facebook.
 				//list all your friends.
-				/*
-				第四步：
-				*/
-
 				FB.api('/me/friends', function(response){
 				
-						var i=0;
-										
-						while(response['data'][i] != null){
-										
-							var fId = response['data'][i]['id'];
-							var fName = response['data'][i]['name'];
-							$("<div onclick='changeInfo("+fId+");'><img src='https://graph.facebook.com/"+ fId + "/picture' /><span>"+fName+"</span></div>").appendTo("#FillInList");
+					var i=0;
+					
+					while(response['data'][i] != null){
+					
+						var fId = response['data'][i]['id'];
+						var fName = response['data'][i]['name'];
+						$("<div onclick='changeInfo("+fId+");'><img src='https://graph.facebook.com/"+ fId + "/picture' /><span>"+fName+"</span></div>").appendTo("#FriendList");
 
-							i++;
-						}
+						i++;
 					}
 				});
 				
-				/*
-				第五步：
-				*/
-				//We have listed all your friends without any list categories.
-				//Try to use the api to retrieve our friend lists and display them in the website
+				//List all your friend lists
 				FB.api('/me/friendlists', function(res){
 					getFr(res);
 				});
-					
 			}
 			
 			function getFr(temp){
