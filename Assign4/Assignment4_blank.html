@@ -207,9 +207,7 @@
 							
 					if(temptitle!=null){			
 						FB.api('me/friendlists', 'post', {name: temptitle}, function(res){
-							var fId = response['data'][i]['id'];
-							var fName = response['data'][i]['name'];
-							$("<div onclick='changeInfo("+fId+");'><img src='https://graph.facebook.com/"+ fId + "/picture' /><span>"+fName+"</span></div>").appendTo("#FriendList");
+							var res = response['data'][i]['id'];
 					}
 				}
 			};
@@ -218,11 +216,12 @@
 		<div id="FriendList">
 		</div>
 		<div id="infoDiv">
-			<div id="friendsInfo">
-				<ul id="ControlList">
+			<ul id="ControlList">
 					<li id="create" onclick="change(1);"><span>Create</span></li>
 					<li id="delete" onclick="change(2);"><span>Delete</span></li>
-				</ul>
+			</ul>
+			<div id="friendsInfo">
+				
 				<span>姓名：</span><span id="name"></span><br/>
 				<span>性別：</span><span id="gender"></span><br/>
 				<span>生日：</span><span id="birth"></span><br/>
