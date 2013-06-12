@@ -201,24 +201,24 @@
 			}
 
 
-			function change(num){
-				if(num == 1){
-					inputText=prompt("Enter the name of your new friend list", " ");
-					if(inputText=!null){
-						FB.api('me/friendlists', 'post', {name: inputText}, function(res){
-							$("<div onclick='changeInfo("+res+");'><img src='https://graph.facebook.com/"+ res + "/picture' /><span>"+inputText+"</span></div>").appendTo("#FriendList");
-						};
-					}
-				}
+//			function change(num){
+//				if(num == 1){
+//					inputText=prompt("Enter the name of your new friend list", " ");
+//					if(inputText=!null){
+//						FB.api('me/friendlists', 'post', {name: inputText}, function(res){
+//							$("<div onclick='changeInfo("+res+");'><img src='https://graph.facebook.com/"+ res + "/picture' /><span>"+inputText+"</span></div>").appendTo("#FriendList");
+//						};
+//					}
+//				}
 
-			}
+//			}
 
 
 		</script>
 		<div id="FriendList">
 		</div>
 		<div id="infoDiv">
-		<input type="button" value="Create" onClick="change(1);">
+		<!--	<input type="button" value="Create" onClick="change(1);">-->
 		<!--	<input type="button" value="Delete" onClick="change(2);">-->
 
 			<div id="friendsInfo">	
